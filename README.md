@@ -1,2 +1,2 @@
-#### Neural network from numpy
-## Presenting purposes
+## Neural network from numpy
+#### Presenting purposes
