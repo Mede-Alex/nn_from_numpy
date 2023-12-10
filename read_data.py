@@ -3,7 +3,8 @@ import idx2numpy
 import matplotlib.pyplot as plt
 
 
-def read_sample(n):
+def read_sample(n: int) -> (np.ndarray, np.ndarray):
+    """Returns n * (img, label) normalized"""
     PATH_IMAGE = 'data/train-images-idx3-ubyte'
     PATH_LABEL = 'data/train-labels-idx1-ubyte'
 
@@ -16,6 +17,7 @@ def read_sample(n):
 
 
 def display_img(img: np.ndarray, label: np.uint8) -> None:
+    """Saves img at ./sample.jpg"""
     plt.figure()
     plt.imshow(img, cmap='grey')
     plt.axis(False)
@@ -25,7 +27,6 @@ def display_img(img: np.ndarray, label: np.uint8) -> None:
 
 NO_SAMPLES = 1000
 
+## usage
 imgs, labels = read_sample(NO_SAMPLES)
-
-
-display_img(imgs[2], labels[2])
+display_img(imgs[0], labels[0])

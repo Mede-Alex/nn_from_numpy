@@ -28,6 +28,7 @@ imgs, labels = read_sample(NO_SAMPLES)
 
 # one training example
 img = imgs[0].reshape(INPUT_NEURONS)
+label = labels[0]
 
 w01 = initialize_weights(INPUT_NEURONS, HIDDEN_NEURONS)
 w12 = initialize_weights(HIDDEN_NEURONS, HIDDEN_NEURONS)
@@ -44,7 +45,7 @@ layer_3_values = sigmoid(np.dot(w23, layer_2_values) + b3)
 
 #calculate loss
 print("True value")
-y_true = [0 if val != labels[0] else 1 for val in (range(10))]
+y_true = [0 if val != label else 1 for val in (range(OUTPUT_NEURONS))]
 print(y_true) 
 print("Predicted value")
 print(layer_3_values)
@@ -52,4 +53,3 @@ loss = _loss(y_true, layer_3_values)
 print(loss) 
 
 #backward prop
-
